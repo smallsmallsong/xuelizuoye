@@ -1,0 +1,12 @@
+.nav{
+	cursor: pointer;
+}
+.nav li{
+	width: 140px;
+	height: 50px;
+	background-color: #ccc;
+	/*水平垂直居中*/
+	text-align: center;
+	line-height: 50px;
+	/*和父高度相同的时候，会自动垂直居中*/
+}

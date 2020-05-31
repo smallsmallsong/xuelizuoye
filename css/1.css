@@ -1,0 +1,200 @@
+.header-top{
+	height: 32px;/* 用蓝湖测量高度 */
+	line-height: 32px;/* 垂直居中 */
+	border-bottom: 1px solid rgba(218,218,218,1);
+}
+
+/* 使核心内容处于正中间 */
+.container{
+	margin: 0 auto;
+	width: 1200px;
+}
+
+.header-info{
+	float: right;/* 在核心区域得右侧，所以向右浮动，浮动的结果为：不是并排显示；在父元素设置清浮动 */
+}
+
+.header-info li{
+	float: left;/* 给li设置左浮动，使其并排显示；并给父元素清浮动 */
+	margin-left: 27px;/* 测量出间距大约为27px */
+}
+
+.header-info a{
+	font-size: 12px;
+	font-weight: 300;
+	color: rgba(0,0,0,1);/* 给a标签设置，颜色才能生效 */
+}
+
+.iphone{
+	padding-left: 17px;
+	background: url(../css/#) no-repeat left center;/* 找图片相对于css的相对路径；并且图片平铺，在li的左边且垂直居中 */
+
+}
+
+.weixin{
+	padding-left: 24px;/* 文字左边距离图片左边的距离 */
+	background: url(../css/$) no-repeat left center;/* 这时图片在文字的下边，所以要设置padding值 */
+}
+
+.header-bottom{
+	height: 100px;/* 下面div的高度 */
+}
+
+.logo{
+	/* margin-top: 14px; */
+	padding-top: 14px;
+	float: left;/* 使它们并排显示，要进行浮动 */
+}
+
+.nav{
+	float: left;
+	margin-top: 38px;/* 使li垂直居中显示 */
+}
+.nav li{
+	float: left;/* 接下来给nav里面的li浮动；并给父元素清浮动 */
+	width: 122px;/* 测量导航的宽度 */
+	text-align: center;/* 首页左边距离logo有距离，解决方法：居中 */
+	border-right: 1px solid black;
+	font-size: 16px;
+	font-weight: bold;
+
+}
+
+.nav .last{
+	border: none;/* 使俱乐部右边的竖线去掉 */
+}
+.nav a{
+	color: rgba(0,0,0,1);  /* 必须给a标签设置颜色才生效 */
+} 
+.form{
+	float: right;
+	margin-top: 34px;
+}
+
+.search{
+	float: left;
+	width: 145px; /* 内容宽度要用盒子总宽度减去padding和border(165-20) */
+	padding: 9px;
+	border: 1px solid rgba(208,61,61,1);;
+}
+.submit{
+	float: left;
+	width: 36px;
+	height: 36px;
+	border: 1px solid rgb(208,61,61,1);
+	background: rgba(208,61,61,1) url(../#) no-repeat center center;
+}
+/* 当两个表单要并列显示，并且中间没有空隙的时候，一般用浮动（可以清除空格带来的而空隙，并且在父元素设置清浮动clear） */
+/* 按钮默认有一个2px的边框,要把它去掉 *//* 在element-style里面加上border：none */
+/* 按钮比较特殊，width不是内容区的宽度，而是内容+padding+border */
+
+.banner{
+	height: 550px;/* 给banner设置高度，否则没有图片显示 */
+	position: relative;/* 给banner一个相对定位，给li绝对定位，使轮播图重叠 */
+}
+.banner li{
+	width: 100%;/* 一旦一个元素设置了浮动或定位以后，就没有自己的大小了，必须要单独设置宽度,若没有单独设置，则宽高由里面的内容撑起来 *//* 100%的参照物是父元素的ul的宽度 */
+	height: 550px; /* 给每个li设置高度 */
+	position: absolute;
+	top: 0;
+	left: 0;/* top和left值一样，保证可以重叠 */
+}
+.banner-one{
+	background: url(../#1) no-repeat center center;/* 不平铺 处于正中间位置 */
+}
+/* 解决轮播图在下方没有滚动条的小妙招 */
+.banner-two{
+	background: url(../#2) no-repeat center center;/* 不平铺 处于正中间位置 */
+}
+
+.text{
+	position: absolute;/* 给图片一个相对定位 *//* 相对于有定位元素的li two */
+	top: 47px;
+	left: 55%;/* 始终让文字处于中间位置，不论放大缩小，所以不能用px，使用相对单位 */
+}
+.prev,.next{
+	width: 106px;
+	height: 106px;
+	top: 222px;
+	position: absolute;/* 两个对称图标覆盖在轮播图上面，也是定位 ,参照物是class为banner的div*/
+	left: 8%;
+}
+.next{
+	left: auto;/* 必须用auto来覆盖原来设置的left值 */
+	right: 8%; /* 水平左右对称 */
+}
+.title{
+	text-align: center;
+	padding: 106px; /* 收藏距离上部距离 */
+	height: 104px; /* 整个高度210px-106px */
+}
+.title h2{
+	font-size: 20px;
+	font-weight: bold;
+	color: rgba(32,32,32,1);
+	background: url(../#3) no-repeat center;
+}
+.title .small{
+	font-size: 20px;
+	font-weight: bold; /* 字体加粗与颜色是可以继承父元素h2的，所以可以不写 */
+	color: rgba(32,32,32,1);
+	padding-top: 15px;
+}
+.ad{
+	width: 100%;
+	height: 550px;
+	background: url(../#4);
+}
+.product img{
+	vertical-align: bottom;
+	/* 图片地下会有距离，是图片的基线造成的，可以把基线设置为底线 */ 
+}
+.product li{
+	position: relative; /* 需要给每个li设置相对定位，让文字定位到上面 */
+}
+.product li div{
+	position: absolute; /* 里面的每个div需要绝对定位 */
+	top: 0;
+	left: 0;
+	/* 若div的宽度和li的相同，可以不用测量，让left,right都为0，去适应宽度 */
+	right: 0;
+	height: 45px;
+	background: rgba(208,61,61,0.8);
+	color: white;
+	text-align: center;
+}
+.product-big li div{
+	height: 58px;
+	/* 大的div与小的div高度不一样，在整体div设置完之后，再给特殊的单独设置 */
+}
+.product-big{
+	float: left;
+}
+.product-small{
+	float: right;
+	width: 700px; /* 给它设置个固定宽度，能让四个图片放得下 */
+}
+.product-small li{
+	float: left; /* 给每个li向左浮动 */
+}
+
+.sever-info{
+	height: 135px;
+	background: rgba(58,58,58,0.8);
+	text-align: center; 
+	/* 发现居中并没有生效，因为ul是块级元素，它的宽度占整个浏览器的宽度
+	，所以改ul的属性 */
+	margin-top: 15px;/* 距离上部距离 */
+
+}
+.sever-info ul{
+	display: inline-block;/* (小技巧)
+ */}
+.sever-info li{
+	float: left;
+	/* 所有的li左浮动 */
+	padding: 0 82px;/* （小技巧） */
+	/* 通过测量每个li之间165px，给每个li分配左右距离 */
+}
+
+/* 默认的行高，可以去掉，写上 √line-height:1 */

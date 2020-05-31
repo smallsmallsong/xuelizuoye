@@ -1,0 +1,14 @@
+p {
+    color: red;
+    font-size: 14px;
+}
+
+.green {
+    color: green;
+    font-size: 16px;
+}
+
+#one {
+    color: yellow;
+    font-size: 18px;
+}
